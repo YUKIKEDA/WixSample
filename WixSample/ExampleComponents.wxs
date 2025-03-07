@@ -1,8 +1,14 @@
 <Wix xmlns="http://wixtoolset.org/schemas/v4/wxs">
   <Fragment>
-    <ComponentGroup Id="ExampleComponents" Directory="INSTALLFOLDER">
-      <Component>
-        <File Source="ExampleComponents.wxs" />
+    <ComponentGroup Id="CounterAppComponents" Directory="INSTALLFOLDER">
+      <Component Id="MainExecutable" Guid="{7CBE330A-7493-5BBA-A458-941E7BF076E1}">
+        <File Id="CounterAppEXE" Source="$(var.CounterApp.TargetDir)CounterApp.exe" KeyPath="yes" />
+      </Component>
+      <Component Id="MainLibrary" Guid="{8DBE330A-7493-5BBA-A458-941E7BF076E2}">
+        <File Id="CounterAppDLL" Source="$(var.CounterApp.TargetDir)CounterApp.dll" KeyPath="yes" />
+      </Component>
+      <Component Id="RuntimeConfig" Guid="{9DBE330A-7493-5BBA-A458-941E7BF076E3}">
+        <File Id="RuntimeConfigJSON" Source="$(var.CounterApp.TargetDir)CounterApp.runtimeconfig.json" KeyPath="yes" />
       </Component>
     </ComponentGroup>
   </Fragment>

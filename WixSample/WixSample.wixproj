@@ -1,6 +1,14 @@
 ﻿<Project Sdk="WixToolset.Sdk/5.0.2">
-  <Target Name="CollectSuggestedVisualStudioComponentIds" />
+  <PropertyGroup>
+    <OutputName>CounterAppInstaller</OutputName>
+  </PropertyGroup>
+  
   <ItemGroup>
     <PackageReference Include="WixToolset.UI.wixext" Version="5.0.2" />
+    <PackageReference Include="WixToolset.Heat" Version="5.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CounterApp\CounterApp.csproj" />
   </ItemGroup>
 </Project>
