@@ -7,6 +7,13 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBlock x:Name="CounterText" Text="0" FontSize="48" HorizontalAlignment="Center" Margin="0,0,0,20"/>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,0,0,10">
+                <Button x:Name="DecrementButton" Content="-" Width="50" Height="50" FontSize="24" Margin="0,0,10,0" Click="DecrementButton_Click"/>
+                <Button x:Name="IncrementButton" Content="+" Width="50" Height="50" FontSize="24" Click="IncrementButton_Click"/>
+            </StackPanel>
+            <Button x:Name="ResetButton" Content="リセット" Width="110" Height="30" Click="ResetButton_Click"/>
+        </StackPanel>
     </Grid>
 </Window>

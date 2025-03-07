@@ -16,8 +16,33 @@ namespace CounterApp;
 /// </summary>
 public partial class MainWindow : Window
 {
+    private int _counter = 0;
+
     public MainWindow()
     {
         InitializeComponent();
+    }
+
+    private void IncrementButton_Click(object sender, RoutedEventArgs e)
+    {
+        _counter++;
+        UpdateCounterDisplay();
+    }
+
+    private void DecrementButton_Click(object sender, RoutedEventArgs e)
+    {
+        _counter--;
+        UpdateCounterDisplay();
+    }
+
+    private void ResetButton_Click(object sender, RoutedEventArgs e)
+    {
+        _counter = 0;
+        UpdateCounterDisplay();
+    }
+
+    private void UpdateCounterDisplay()
+    {
+        CounterText.Text = _counter.ToString();
     }
 }
