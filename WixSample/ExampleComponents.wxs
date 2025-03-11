@@ -2,13 +2,22 @@
   <Fragment>
     <ComponentGroup Id="CounterAppComponents" Directory="INSTALLFOLDER">
       <Component Id="MainExecutable" Guid="{7CBE330A-7493-5BBA-A458-941E7BF076E1}">
-        <File Id="CounterAppEXE" Source="$(var.CounterApp.TargetDir)CounterApp.exe" KeyPath="yes" />
+        <File Id="CounterAppEXE" Source="$(var.CounterApp.TargetDir)CounterApp.exe" KeyPath="yes">
+          <Permission User="Everyone" GenericAll="yes"/>
+        </File>
+        <RemoveFile Id="RemoveMainExe" Name="CounterApp.exe" On="uninstall" />
       </Component>
       <Component Id="MainLibrary" Guid="{8DBE330A-7493-5BBA-A458-941E7BF076E2}">
-        <File Id="CounterAppDLL" Source="$(var.CounterApp.TargetDir)CounterApp.dll" KeyPath="yes" />
+        <File Id="CounterAppDLL" Source="$(var.CounterApp.TargetDir)CounterApp.dll" KeyPath="yes">
+          <Permission User="Everyone" GenericAll="yes"/>
+        </File>
+        <RemoveFile Id="RemoveMainDll" Name="CounterApp.dll" On="uninstall" />
       </Component>
       <Component Id="RuntimeConfig" Guid="{9DBE330A-7493-5BBA-A458-941E7BF076E3}">
-        <File Id="RuntimeConfigJSON" Source="$(var.CounterApp.TargetDir)CounterApp.runtimeconfig.json" KeyPath="yes" />
+        <File Id="RuntimeConfigJSON" Source="$(var.CounterApp.TargetDir)CounterApp.runtimeconfig.json" KeyPath="yes">
+          <Permission User="Everyone" GenericAll="yes"/>
+        </File>
+        <RemoveFile Id="RemoveConfig" Name="CounterApp.runtimeconfig.json" On="uninstall" />
       </Component>
     </ComponentGroup>
   </Fragment>

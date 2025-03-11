@@ -5,7 +5,8 @@
            Version="1.0.0.0" 
            UpgradeCode="c30e15e7-edfb-4a0b-b681-b676d34779e0">
     
-    <MajorUpgrade DowngradeErrorMessage="!(loc.DowngradeError)" />
+    <MajorUpgrade Schedule="afterInstallInitialize"
+                  DowngradeErrorMessage="!(loc.DowngradeError)" />
     
     <ui:WixUI Id="WixUI_InstallDir" />
     <Property Id="WIXUI_INSTALLDIR" Value="INSTALLFOLDER" />
@@ -17,8 +18,20 @@
       <Custom Action="ShowUninstallMessage" After="RemoveFiles" Condition="REMOVE~=&quot;ALL&quot;" />
     </InstallExecuteSequence>
 
+    <Component Id="RemoveInstallFolder" Directory="INSTALLFOLDER" Guid="{4a3657c0-b4ef-41e0-8cba-ad940cd99368}">
+      <RemoveFolder Id="INSTALLFOLDER" On="both"/>
+      <RemoveFile Id="RemoveAllFiles" Name="*.*" On="both" />
+      <RegistryValue Root="HKLM" 
+                     Key="Software\[Manufacturer]\[ProductName]" 
+                     Name="InstallDir" 
+                     Type="string" 
+                     Value="[INSTALLFOLDER]" 
+                     KeyPath="yes" />
+    </Component>
+
     <Feature Id="Main">
       <ComponentGroupRef Id="CounterAppComponents" />
+      <ComponentRef Id="RemoveInstallFolder" />
     </Feature>
   </Package>
 </Wix>
