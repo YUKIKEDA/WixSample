@@ -10,6 +10,13 @@
     <ui:WixUI Id="WixUI_InstallDir" />
     <Property Id="WIXUI_INSTALLDIR" Value="INSTALLFOLDER" />
 
+    <Binary Id="CustomActionBinary" SourceFile="$(var.CustomAction.TargetDir)CustomAction.CA.dll" />
+    <CustomAction Id="ShowUninstallMessage" BinaryRef="CustomActionBinary" DllEntry="ShowUninstallMessage" Execute="immediate" />
+
+    <InstallExecuteSequence>
+      <Custom Action="ShowUninstallMessage" After="RemoveFiles" Condition="REMOVE~=&quot;ALL&quot;" />
+    </InstallExecuteSequence>
+
     <Feature Id="Main">
       <ComponentGroupRef Id="CounterAppComponents" />
     </Feature>

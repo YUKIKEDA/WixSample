@@ -7,5 +7,6 @@ This file contains the declaration of all the localizable strings.
   <String Id="Description" Value="A simple counter application." />
   <String Id="Keywords" Value="Counter,Application" />
   <String Id="Comments" Value="Counter Application Installer" />
+  <String Id="UninstallCompleteMessage" Value="Uninstallation completed successfully." />
 
 </WixLocalization>

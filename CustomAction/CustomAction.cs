@@ -1,5 +1,6 @@
 using System;
 using System.Windows.Forms;
+using System.Drawing;
 using WixToolset.Dtf.WindowsInstaller;
 
 namespace CustomAction
@@ -20,7 +21,22 @@ namespace CustomAction
             try
             {
                 session.Log("Begin ShowUninstallMessage");
-                MessageBox.Show(session["UninstallCompleteMessage"], "情報", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                
+                // メッセージボックスのオーナーウィンドウを作成
+                Form dummyForm = new Form();
+                dummyForm.StartPosition = FormStartPosition.Manual;
+                
+                // 画面の中央から少し右下にずらした位置を計算
+                int offsetX = 100;  // 右に100ピクセル
+                int offsetY = 50;   // 下に50ピクセル
+                dummyForm.Location = new Point(
+                    (Screen.PrimaryScreen.WorkingArea.Width - dummyForm.Width) / 2 + offsetX,
+                    (Screen.PrimaryScreen.WorkingArea.Height - dummyForm.Height) / 2 + offsetY
+                );
+                
+                MessageBox.Show(dummyForm, "Uninstallation completed successfully.", "情報", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                dummyForm.Dispose();
+                
                 return ActionResult.Success;
             }
             catch (Exception ex)
