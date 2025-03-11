@@ -10,4 +10,5 @@
     <ProjectReference Include="..\CounterApp\CounterApp.csproj" />
     <ProjectReference Include="..\CustomAction\CustomAction.csproj" />
   </ItemGroup>
+  <Target Name="CollectSuggestedVisualStudioComponentIds" />
 </Project>
