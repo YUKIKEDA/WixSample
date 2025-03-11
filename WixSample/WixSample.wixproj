@@ -2,13 +2,12 @@
   <PropertyGroup>
     <OutputName>CounterAppInstaller</OutputName>
   </PropertyGroup>
-  
   <ItemGroup>
     <PackageReference Include="WixToolset.UI.wixext" Version="5.0.2" />
     <PackageReference Include="WixToolset.Heat" Version="5.0.2" />
   </ItemGroup>
-
   <ItemGroup>
     <ProjectReference Include="..\CounterApp\CounterApp.csproj" />
+    <ProjectReference Include="..\CustomAction\CustomAction.csproj" />
   </ItemGroup>
 </Project>

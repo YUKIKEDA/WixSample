@@ -1,11 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.13.35818.85 d17.13
+VisualStudioVersion = 17.13.35818.85
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{B7DD6F7E-DEF8-4E67-B5B7-07EF123DB6F0}") = "WixSample", "WixSample\WixSample.wixproj", "{15E65C73-2A8F-4584-9F7D-C7BBCE30766A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CounterApp", "CounterApp\CounterApp.csproj", "{6142E372-69FA-4A8A-BD41-4C1AB24E60ED}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomAction", "CustomAction\CustomAction.csproj", "{B35C3138-C218-424E-BFC9-D8800C588B51}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +53,22 @@ Global
 		{6142E372-69FA-4A8A-BD41-4C1AB24E60ED}.Release|x64.Build.0 = Release|Any CPU
 		{6142E372-69FA-4A8A-BD41-4C1AB24E60ED}.Release|x86.ActiveCfg = Release|Any CPU
 		{6142E372-69FA-4A8A-BD41-4C1AB24E60ED}.Release|x86.Build.0 = Release|Any CPU
+		{B35C3138-C218-424E-BFC9-D8800C588B51}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B35C3138-C218-424E-BFC9-D8800C588B51}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B35C3138-C218-424E-BFC9-D8800C588B51}.Debug|ARM64.ActiveCfg = Debug|Any CPU
+		{B35C3138-C218-424E-BFC9-D8800C588B51}.Debug|ARM64.Build.0 = Debug|Any CPU
+		{B35C3138-C218-424E-BFC9-D8800C588B51}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{B35C3138-C218-424E-BFC9-D8800C588B51}.Debug|x64.Build.0 = Debug|Any CPU
+		{B35C3138-C218-424E-BFC9-D8800C588B51}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{B35C3138-C218-424E-BFC9-D8800C588B51}.Debug|x86.Build.0 = Debug|Any CPU
+		{B35C3138-C218-424E-BFC9-D8800C588B51}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B35C3138-C218-424E-BFC9-D8800C588B51}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B35C3138-C218-424E-BFC9-D8800C588B51}.Release|ARM64.ActiveCfg = Release|Any CPU
+		{B35C3138-C218-424E-BFC9-D8800C588B51}.Release|ARM64.Build.0 = Release|Any CPU
+		{B35C3138-C218-424E-BFC9-D8800C588B51}.Release|x64.ActiveCfg = Release|Any CPU
+		{B35C3138-C218-424E-BFC9-D8800C588B51}.Release|x64.Build.0 = Release|Any CPU
+		{B35C3138-C218-424E-BFC9-D8800C588B51}.Release|x86.ActiveCfg = Release|Any CPU
+		{B35C3138-C218-424E-BFC9-D8800C588B51}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
